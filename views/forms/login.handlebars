@@ -1,0 +1,27 @@
+{{>menu}}
+
+<main class="w-full h-[calc(100vh-80px)] flex items-center justify-center ">
+    <div class="container-login bg-white shadow-xl">
+        <h1 class="font-bold text-2xl text-center border-b p-2">Área de login</h1>
+        <form class=" flex flex-col w-full" id="form_login">
+            <div class="flex flex-col gap-2">
+                <label for="email">Seu email</label>
+                <input class="rounded-md focus:outline-solid focus:outline-slate-800" type="email" placeholder="Email" id="email">
+            </div>
+            <div class="flex flex-col gap-2 relative">
+                <label for="password">Sua senha</label>
+                <input class="rounded-md focus:outline-solid focus:outline-slate-800" type="password" name="password" id="password" placeholder="Password">
+                {{>eyes}}
+            </div>
+            <span class="m-1 flex items-end justify-end">
+                <a class="text-blue-600" href="/recovery?type=password">Esqueceu a senha ?</a>
+            </span>
+            <button class="bg-slate-950 text-white p-2 m-1 rounded-md hover:bg-slate-800 duration-200">Continuar</button>
+            <span class="flex gap-2 items-center justify-center p-2">
+                <p>Ainda não tem uma conta ?</p> <a class="text-blue-600" href="/register">Criar conta.</a>
+            </span>
+            <p class="text-response text-gray-700 text-center hidden"></p>
+        </form>
+        {{>loading}}
+    </div>
+</main>

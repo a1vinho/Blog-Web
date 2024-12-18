@@ -1,0 +1,11 @@
+.loading_next {
+    animation: loading_next 2s infinite linear;
+}
+@keyframes loading_next {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(365deg);
+    }
+}

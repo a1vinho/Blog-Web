@@ -1,0 +1,83 @@
+<html lang="pt-br" class="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="http://192.168.1.74/css/tailwind.css">
+    <link rel="stylesheet" href="http://192.168.1.74/css/partials/header.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=groups" />
+    <link rel="stylesheet" href="{{css}}">
+
+    <title>Tudos e Todos|| {{title}} </title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #8bf0fb;
+        }
+        button {
+            transition: .2s;
+        }
+        main .loading {
+            display: none;
+            width: 30px;
+            margin: 10px auto;
+            height: 30px;
+            border: 2px solid #ccc;
+            border-left: 1px solid #020617;
+            border-radius: 50%;
+            animation: loading 1s linear infinite;
+        }
+
+        @keyframes loading {
+            0% {
+                transform: rotate(0deg)
+            }
+
+            100% {
+                transform: rotate(365deg);
+            }
+        }
+    </style>
+</head>
+
+<body class="dark:bg-black">
+    {{{body}}}
+    
+    <script>
+        const menu_open = document.getElementById('menu-open');
+        if (menu_open) {
+            const nav_menu = document.querySelector('.nav-menu-main');
+            const close_menu = document.getElementById('close-menu');
+            const shadow = document.querySelector('.shadow');
+            menu_open.addEventListener("click", function () {
+                nav_menu.style.display = 'flex';
+                nav_menu.classList.toggle('desactive-menu');
+                shadow.style.display = 'block';
+            });
+            close_menu.addEventListener('click', function () {
+                nav_menu.style.display = 'none';
+                shadow.style.display = 'none';
+                nav_menu.classList.toggle('desactive-menu');
+            });
+            shadow.addEventListener("click", function () {
+                nav_menu.style.display = 'none';
+                shadow.style.display = 'none';
+                nav_menu.classList.toggle('desactive-menu');
+            });
+        };
+
+        async function GetSessions() {
+            const data = (await fetch('http://localhost/sessions')).json();
+            return data;
+        };
+    </script>
+    <script src="{{js}}"></script>
+</body>
+
+</html>

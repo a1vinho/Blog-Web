@@ -1,0 +1,18 @@
+@media (max-width:650px) {
+    .nav-home {
+        width:100%;
+    }
+    .nav-home > ul {
+        width: 100%;
+    }
+}
+@media (max-width:450px) {
+    .post h1 {
+        font-size: smaller;
+    }
+}
+@media (max-width:360px) {
+    .nav-home > ul {
+        flex-direction: column;
+    }
+}

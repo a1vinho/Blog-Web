@@ -1,0 +1,31 @@
+
+main .container-login {
+    border-radius:10px;
+    min-width: 400px;
+}
+
+main form input {
+    background-color: transparent;
+    width:100%;
+    padding:10px;
+    outline:1px solid #ccc;
+}
+main form {
+    padding:10px;
+    gap:10px;
+    width:100%;
+    justify-content: center;
+}
+
+main form a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width:460px) {
+    main div {
+        min-width:100%;
+        border-radius:0;
+        box-shadow:0;
+        height:calc(100%);
+    }
+}

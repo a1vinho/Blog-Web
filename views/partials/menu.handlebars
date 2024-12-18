@@ -1,0 +1,22 @@
+<header id="header-menu" data-type="css-type" class="w-full flex bg-slate-950 text-white fixed justify-between p-3 items-center relative dark:bg-white z-10">
+    <div class="title-icon-menu flex gap-1.5 text-base justify-center">
+        {{#if (compare endpoint)}}
+            <a href="/" class="flex gap-1">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z"/></svg>
+                <span>Volta para home</span>
+            </a>
+            {{else}}
+            <span class="material-symbols-outlined ">groups</span>
+            <h2 class="title-menu-h2">Tudos e Todos</h2>
+        {{/if}}
+    </div>
+    <div class="list-icons-menu flex gap-5 items-center">
+
+        {{#if (compare endpoint) }}
+        <span>{{text}}</span>
+        {{else}}
+            {{>nav-menu}}
+        {{/if}}
+
+    </div>
+</header>

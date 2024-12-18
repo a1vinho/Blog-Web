@@ -1,0 +1,36 @@
+{{>menu}}
+<main class="main-register flex w-full h-[calc(100vh-80px)] items-center justify-center">
+    <div class="container bg-white flex flex-col gap-5 shadow-lg rounded-xl w-full max-w-md p-6">
+        <!-- Cabeçalho -->
+        <div class="header-container flex flex-col items-center border-b border-gray-200 pb-4">
+            <h1 class="font-bold text-2xl text-gray-800">Crie seu nome de usuário</h1>
+           
+        </div>
+        
+        <!-- Formulário -->
+        <form class="form-create-username flex flex-col gap-4">
+            <!-- Campo de email -->
+            <div class="flex flex-col gap-2">
+                <label for="username" class="text-gray-700 font-medium">nome de usuario</label>
+                <input 
+                    type="text" 
+                    placeholder="Adicione seu nome de usuário" 
+                    id="username" 
+                    class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-slate-900 focus:border-transparent"
+                >
+            </div>
+            <!-- Botão -->
+            <button 
+                type="submit" 
+                class="w-full p-3 bg-slate-900 text-white rounded-lg hover:bg-slate-800 transition duration-300"
+            >
+                Continuar
+            </button>
+            <!-- Mensagem -->
+            <p class="text-sm text-gray-600 text-center">Seu nome de usuário deve ter no minímo 4 caracteres.</p>
+        </form>
+        {{>loading}}
+        <p class="text-response text-sm text-center hidden"></p>
+        
+    </div>
+</main>

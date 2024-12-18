@@ -1,0 +1,166 @@
+{{>menu}}
+<main class="main-register flex w-full h-[calc(100vh-80px)] items-center justify-center">
+  <div class="container-register bg-white p-6 rounded-lg shadow-lg w-11/12 max-w-lg">
+  <div class="loading_next_register flex flex-col items-center justify-between gap-10 hidden">
+    <div class="loading_next" style="width: 150px; height: 150px; border-radius:50%; border:3px solid rgb(170, 170, 170); border-left:3px solid #020617;">
+
+    </div>
+    <p class="text-gray-700 text-center">Por favor espere um momento enquanto estamos criando sua conta...</p>
+  </div>
+    <div class="container-presentation flex flex-col gap-6">
+      <h1 class="text-2xl font-bold border-b border-gray-300 pb-2 text-center text-gray-800">
+        Bem-vindo ao Tudos e Todos
+      </h1>
+      <div class="container-text-presentation text-gray-600 leading-relaxed">
+        <p class="mb-4">
+          Olá, seja bem-vindo ao blog <strong class="text-gray-800">Tudos e Todos</strong>. Aqui você poderá
+          compartilhar os mais diversos pensamentos e assuntos que desejar. Sinta-se à vontade para explorar nossos
+          serviços.
+        </p>
+        <p>
+          Caso tenha alguma dúvida ou deseje saber mais sobre o nosso blog,
+          <a href="/saiba-mais" class="text-blue-600 hover:underline font-semibold">
+            clique aqui
+          </a>.
+        </p>
+      </div>
+      <div class="continue-register flex items-center justify-center">
+        <button id="continue" onclick="continue_register()"
+          class="bg-slate-950 hover:bg-slate-800 text-white rounded-lg px-6 py-2 font-medium transition-all">
+          Continuar
+        </button>
+      </div>
+      <div class="loading"></div>
+    </div>
+    <div class="container-sessions hidden flex-col gap-5">
+      <div class="session session-email">
+        <div class="header-session flex gap-3">
+          <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#DF9D9B">
+            <path
+              d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280L160-640v400h640v-400L480-440Zm0-80 320-200H160l320 200ZM160-640v-80 480-400Z" />
+          </svg>
+          <strong class="text-gray-600">Adicione seu email</strong>
+        </div>
+        <div class="button-session flex justify-between gap-5">
+          {{#if sessions.email}}
+          <strong class="text-gray-600">{{sessions.email}}</strong>
+          <a href="/register/email">
+            <button class="bg-slate-800 text-white p-1 rounded-sm hover:bg-slate-600">
+              <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                fill="#FFFFFF">
+                <path
+                  d="M200-200h57l391-391-57-57-391 391v57Zm-80 80v-170l528-527q12-11 26.5-17t30.5-6q16 0 31 6t26 18l55 56q12 11 17.5 26t5.5 30q0 16-5.5 30.5T817-647L290-120H120Zm640-584-56-56 56 56Zm-141 85-28-29 57 57-29-28Z" />
+              </svg>
+            </button>
+          </a>
+          {{else}}
+          <p class="text-gray-600">Adicione seu email para receber mais informações sobre o blog.</p>
+          <a href="/register/email">
+            <button class="bg-slate-950 text-white p-2 rounded-sm hover:bg-slate-700">
+              Continuar
+            </button>
+          </a>
+          {{/if}}
+        </div>
+      </div>
+      <div class="session session-username">
+        <div class="header-session flex gap-3">
+          <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#DF9D9B">
+            <path
+              d="M480-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM160-160v-112q0-34 17.5-62.5T224-378q62-31 126-46.5T480-440q66 0 130 15.5T736-378q29 15 46.5 43.5T800-272v112H160Zm80-80h480v-32q0-11-5.5-20T700-306q-54-27-109-40.5T480-360q-56 0-111 13.5T260-306q-9 5-14.5 14t-5.5 20v32Zm240-320q33 0 56.5-23.5T560-640q0-33-23.5-56.5T480-720q-33 0-56.5 23.5T400-640q0 33 23.5 56.5T480-560Zm0-80Zm0 400Z" />
+          </svg>
+          <strong class="text-gray-600">Crie seu nome de usuário</strong>
+        </div>
+        <div class="button-session flex gap-5 justify-between">
+          {{#if sessions.username}}
+          <strong class="text-gray-600">Nome de usuário adicionado.</strong>
+          <a href="/register/username">
+            <button class="bg-slate-800 text-white p-1 rounded-sm hover:bg-slate-600">
+              <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                fill="#FFFFFF">
+                <path
+                  d="M200-200h57l391-391-57-57-391 391v57Zm-80 80v-170l528-527q12-11 26.5-17t30.5-6q16 0 31 6t26 18l55 56q12 11 17.5 26t5.5 30q0 16-5.5 30.5T817-647L290-120H120Zm640-584-56-56 56 56Zm-141 85-28-29 57 57-29-28Z" />
+              </svg>
+            </button>
+          </a>
+
+          {{else}}
+          <p class="text-gray-600">Seu nome de usuário será como você irá ser indentificado.</p>
+          <a href="/register/username">
+            <button class="btn bg-slate-950 text-white hidden p-2 rounded-sm hover:bg-slate-700">
+              Continuar
+            </button>
+          </a>
+          {{/if}}
+        </div>
+      </div>
+      <div class="session session-image">
+        <div class="header-session flex gap-3">
+          <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#DF9D9B">
+            <path
+              d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm40-80h480L570-480 450-320l-90-120-120 160Zm-40 80v-560 560Z" />
+          </svg>
+          <strong class="text-gray-600">Adicione uma foto de perfil (opcional)</strong>
+        </div>
+        <div class="button-session flex gap-5 justify-between">
+          {{#if sessions.image}}
+          <strong class="text-gray-600">Foto adicionada com sucesso.</strong>
+          <a href="/register/image">
+            <button class="bg-slate-950 text-white p-1">
+              <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                fill="#FFFFFF">
+                <path
+                  d="M200-200h57l391-391-57-57-391 391v57Zm-80 80v-170l528-527q12-11 26.5-17t30.5-6q16 0 31 6t26 18l55 56q12 11 17.5 26t5.5 30q0 16-5.5 30.5T817-647L290-120H120Zm640-584-56-56 56 56Zm-141 85-28-29 57 57-29-28Z" />
+              </svg>
+            </button>
+          </a>
+          {{else}}
+          <p class="text-gray-600">Adicione uma foto de perfil para deixa-lo mais atraente.</p>
+          <a href="/register/image">
+            <button class="btn bg-slate-950 text-white hidden p-2 rounded-sm hover:bg-slate-700">Continuar</button>
+          </a>
+          {{/if}}
+        </div>
+      </div>
+      <div class="session session-password">
+        <div class="header-session flex gap-3">
+          <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#DF9D9B">
+            <path
+              d="M240-80q-33 0-56.5-23.5T160-160v-400q0-33 23.5-56.5T240-640h40v-80q0-83 58.5-141.5T480-920q83 0 141.5 58.5T680-720v80h40q33 0 56.5 23.5T800-560v400q0 33-23.5 56.5T720-80H240Zm0-80h480v-400H240v400Zm240-120q33 0 56.5-23.5T560-360q0-33-23.5-56.5T480-440q-33 0-56.5 23.5T400-360q0 33 23.5 56.5T480-280ZM360-640h240v-80q0-50-35-85t-85-35q-50 0-85 35t-35 85v80ZM240-160v-400 400Z" />
+          </svg>
+          <strong class="text-gray-600">Crie sua senha</strong>
+        </div>
+        <div class="button-session flex justify-between gap-5">
+          {{#if sessions.password}}
+          <strong class="text-gray-600">Senha criada com sucesso.</strong>
+          <a href="/register/password">
+            <button class="bg-slate-950 text-white p-1 rounded-sm hover:bg-slate-600">
+              <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                fill="#FFFFFF">
+                <path
+                  d="M200-200h57l391-391-57-57-391 391v57Zm-80 80v-170l528-527q12-11 26.5-17t30.5-6q16 0 31 6t26 18l55 56q12 11 17.5 26t5.5 30q0 16-5.5 30.5T817-647L290-120H120Zm640-584-56-56 56 56Zm-141 85-28-29 57 57-29-28Z" />
+              </svg>
+            </button>
+          </a>
+          {{else}}
+          <p class="text-gray-600">Crie sua senha para deixa sua conta muito mais segura.</p>
+          <a href="/register/password">
+            <button class="btn bg-slate-950 hidden text-white p-2 rounded-sm hover:bg-slate-700">Continuar</button>
+          </a>
+          {{/if}}
+        </div>
+      </div>
+      <div class="flex justify-between mt-3">
+        <p class="text-gray-800 w-full text-center">
+          Qualquer dúvida acesse <a href="/info" class="text-blue-900 hover:underline">Saiba mais.</a>
+        </p>
+        {{#if next}}
+          <button id="next-register" class="hover:scale-75">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000">
+              <path d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z" />
+            </svg>
+          </button>
+        {{/if}}
+      </div>
+    </div>
+</main>

@@ -1,0 +1,48 @@
+header {
+    width:100%;
+}
+header > div > nav {
+    width:230px;
+    height: 100%;
+    animation: .5s nav_menu;;
+}
+header > div > nav ul > li {
+    cursor: pointer;
+    padding:5px;
+    transition:0.2s;
+}
+header > div > nav ul > li:hover {
+    background-color: rgba(255, 255, 255, 0.212);
+    border-radius:5px;
+}
+.container-form-search {
+    right: 230px;
+}
+@media (max-width:690px) {
+    header > div > nav {
+        display:none;
+    }
+}
+header > div > nav.desactive-menu {
+    animation: desactive-menu .5s;
+}
+@keyframes desactive-menu {
+    0% {
+        opacity: 1;
+        right: 0;
+    }
+    100% {
+        opacity: 0;
+        right: -10%;
+    }
+}
+@keyframes nav_menu {
+    0% {
+        right:-10%;
+        opacity: 0;
+    }
+    100% {
+        right:0%;
+        opacity: 1;
+    }
+}

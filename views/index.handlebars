@@ -1,0 +1,41 @@
+{{>menu}}
+{{>shadow}}
+
+<main class="main-home flex gap-5 flex-col w-full">
+    <div class="container-nav-home p-3 border-b border-black/10 w-full flex">
+        <nav class="nav-home">
+            <ul class="ul-home-index flex gap-5">
+                <li>
+                    <a href="/" class="text-slate-900">Home</a>
+                </li>
+                <li>
+                    <a href="/recent/posts" class="text-slate-900">Postagens Recentes</a>
+                </li>
+                <li>
+                    <a href="https://www.github.com/a1vinho">GitHub</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="container-posts p-3">
+        <div class="post flex flex-col gap-2 p-2 border-b">
+           <div class="header-post">
+            <div class="user-post">
+              <span class="inline">
+                  <a href="/alvinho" class="text-blue-600 inline hover:underline">Alvinho <span class="text-slate-700 text-sm">(Administrador)</span></a>
+              </span>
+            </div>
+              <span class="inline">
+                  <a href="/como-começou-javascript?" class="text-blue-800 text-xl inline hover:underline">
+                    <h1 class="title-post inline">Como começou o javascript ?</h1>
+                </a>
+              </span>
+           </div>
+           <div class="comments-likes text-sm text-gray-800">
+                <span class="like">Likes: 0</span>
+                <span class="comment">Comentários: 0</span>
+                <span>Postado há: 1 dia atrás</span>
+           </div>
+        </div>
+    </div>
+</main>

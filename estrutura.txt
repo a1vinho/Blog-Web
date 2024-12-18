@@ -1,0 +1,29 @@
+Vizualização de postagens - {
+    - Inicialmente o usuário poderá ver as 30 primeiras postagens na página inicial,havera alguns botões onde o usuário poderá olha postagens anteriores.
+    - A página inicial (index) também será dinamica.
+};
+
+Sistema de registro {
+    - Criar um sistema de registro facil de utiliza e intuitivo,com varias camadas de segurança,tanto para o usuário quanto principalmente para o servidor.
+}
+
+Relacionamentos entre as tabelas {
+    - Tabela registros {
+        - id
+        - coluna email
+        - coluna username
+        - coluna password
+    } --------------|
+    - Tabela User { |
+        - id -------| o id vem da tabela de registro (a tabela user irá está relacionada com a tabela registro )
+        - coluna biografia 
+        - coluna image
+        - Relacionamento com a tabela Postagens
+    }
+    - Tabela Postagens {
+        - id
+        - coluna title 
+        - coluna body or content
+        - coluna likes
+    }
+}
